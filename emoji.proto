@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package emoji;
+
+option go_package = "./";
+
+service EmojiService {
+  rpc Emojize (EmojizeRequest) returns (EmojizeReply);
+}
+
+message EmojizeRequest {
+  string text = 1;
+}
+
+message EmojizeReply {
+  string emojized_text = 1;
+}
